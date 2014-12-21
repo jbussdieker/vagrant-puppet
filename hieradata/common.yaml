@@ -1,0 +1,6 @@
+---
+classes:
+ - puppet
+puppet::version: 3.7.3-1puppetlabs1
+puppet::agent: true
+puppet::master: true

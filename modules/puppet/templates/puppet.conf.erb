@@ -1,0 +1,18 @@
+[main]
+logdir=<%= @logdir %>
+vardir=<%= @vardir %>
+ssldir=<%= @ssldir %>
+rundir=<%= @rundir %>
+factpath=<%= @factpath %>
+templatedir=<%= @templatedir %>
+<% if @environmentpath -%>
+environmentpath = $confdir/environments
+default_manifest = $confdir/manifests
+basemodulepath = $confdir/modules:/opt/puppet/share/puppet/modules
+<% end -%>
+
+[master]
+# These are needed when the puppetmaster is run by passenger
+# and can safely be removed if webrick is used.
+ssl_client_header = <%= @ssl_client_header %> 
+ssl_client_verify_header = <%= @ssl_client_verify_header %>
